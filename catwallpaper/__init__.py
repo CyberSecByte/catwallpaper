@@ -32,10 +32,16 @@ def main():
 
 # If windows
 	if system() == "Windows":
-		import os
-		import ctypes
-		ctypes.windll.user32.SystemParametersInfoW(20, 0, uri, 0)
-		os.remove(uri)
+		try:
+			import os
+			import ctypes
+			SPI_SETWALLPAPER = 20
+			ctypes.windll.user32.SystemParametersInfoW(SPI_SETWALLPAPER, 0, uri, 0)
+		except:
+			import os
+			import ctypes
+			SPI_SETWALLPAPER = 20
+			ctypes.windll.user32.SystemParametersInfoA(SPI_SETWALLPAPER, 0, uri, 0)
 
 # If Mac
 	elif system() == "Darwin":
