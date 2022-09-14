@@ -7,7 +7,7 @@ with open(path.join(basedir, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='catwallpaper',
-    version='0.7',
+    version='0.8',
     url='https://github.com/CyberSecByte/catwallpaper',
     install_requires=["requests"],
     classifiers=[

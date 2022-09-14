@@ -32,16 +32,12 @@ def main():
 
 # If windows
 	if system() == "Windows":
-		try:
-			import os
-			import ctypes
-			SPI_SETWALLPAPER = 20
-			ctypes.windll.user32.SystemParametersInfoW(SPI_SETWALLPAPER, 0, uri, 0)
-		except:
-			import os
-			import ctypes
-			SPI_SETWALLPAPER = 20
-			ctypes.windll.user32.SystemParametersInfoA(SPI_SETWALLPAPER, 0, uri, 0)
+		import os
+		import ctypes
+		uri = "\cybersecbyte.jpg"
+		cwd = os.getcwd()
+		okk = cwd + uri
+		ctypes.windll.user32.SystemParametersInfoW(20, 0, okk, 0)
 
 # If Mac
 	elif system() == "Darwin":
@@ -70,7 +66,6 @@ def main():
 
 # For mate
 		elif desktop_session.startswith('M'):
-			import os
 			cwd = os.getcwd()
 			launchmemate = "mateconftool-2 -t string --set " + cwd + "/" + uri
 			os.system(launchmemate)
