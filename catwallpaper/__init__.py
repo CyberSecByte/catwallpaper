@@ -13,6 +13,12 @@ def main():
 		"cat-wallpapers-and-screensavers",
 		"baby-cat-wallpaper",
 		"funny-cat-desktop-wallpaper",
+		"cat-background-wallpaper",
+		"baby-kitten-wallpapers",
+		"hd-cat-wallpapers",
+		"hd-cat-wallpapers-1920x1080",
+		"wallpaper-cats-and-kittens",
+		
 	]
 
 
