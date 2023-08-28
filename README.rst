@@ -1,10 +1,10 @@
 What it does?
 ===============
-It does web scraping with python and downloads random cat images and applies it as your wallpaper acc to your operating system
+Web Scraping Using Python to Download and Apply Random Cat Images as Wallpaper According to Your Operating System
 
 Supported platforms
 ===============
-Currently it supports
+Presently, it provides support the following platforms mentioned below:
 
 1. Windows
 2. Mac
