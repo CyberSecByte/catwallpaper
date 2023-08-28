@@ -8,11 +8,7 @@ Currently it supports
 
 1. Windows
 2. Mac
-3. Linux with desktop environment: Gnome and Mate
-
-Todo
--------------------
-To make it compatible with Xfce and kde
+3. Linux with desktop environment: Gnome, Xfce, Mate, Kde plasma
 
 Installation
 ===============
