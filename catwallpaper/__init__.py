@@ -38,7 +38,6 @@ def main():
 
 # If windows
 	if system() == "Windows":
-		import os
 		import ctypes
 		uri = "\cybersecbyte.jpg"
 		cwd = os.getcwd()
@@ -56,7 +55,6 @@ def main():
 
 # If Linux
 	elif system() == "Linux":
-		import os
 		desktop_session = os.environ.get('XDG_CURRENT_DESKTOP') or os.environ.get('DESKTOP_SESSION')
 
 # For gnome
@@ -72,7 +70,9 @@ def main():
 
 # For xfce
 		elif desktop_session.startswith('X'):
-			print("Support for xfce is coming soon in next updates")
+			cwd = os.getcwd()
+			launchmexfce = "xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/imagepath -s " + uri
+			os.system(launchmexfce)
 
 # For mate
 		elif desktop_session.startswith('M'):
@@ -82,4 +82,15 @@ def main():
 
 # For kde
 		elif desktop_session.startswith('K'):
-			print("Support for kde is coming soon in next updates")
+			cwd = os.getcwd()
+			image_path = cwd + "/" + uri
+			command = (
+				f'dbus-send --session --dest=org.kde.plasmashell ' \
+				f'--type=method_call /PlasmaShell org.kde.PlasmaShell.evaluateScript ' \
+				f'string:"var allDesktops = desktops();' \
+				f'print (allDesktops);for (i=0;i<allDesktops.length;i++)' \
+				f'{{d = allDesktops[i];d.wallpaperPlugin = \"org.kde.image\";' \
+				f'd.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");' \
+				f'd.writeConfig(\"Image\", \"file://{image_path}\")}}"'
+			)
+# The end xD
