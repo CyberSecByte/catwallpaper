@@ -7,7 +7,7 @@ with open(path.join(basedir, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='catwallpaper',
-    version='0.10',
+    version='0.11',
     url='https://github.com/CyberSecByte/catwallpaper',
     install_requires=["requests"],
     classifiers=[
@@ -18,7 +18,7 @@ setup(
     ],
     author='CyberSecByte',
     author_email='cybersecbyte@gmail.com',
-    description='Random cat wallpapers on every platform (windows, mac or even linux)',
+    description='Download and apply random cat wallpapers on every platform (windows, mac or even linux) automatically',
     long_description_content_type='text/markdown',
     keywords=['cat', 'catwallpaper', 'wallpaper', 'meow', 'cats'],
     long_description=long_description,
